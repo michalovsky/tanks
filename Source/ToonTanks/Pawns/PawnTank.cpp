@@ -22,6 +22,15 @@ void APawnTank::HandleDestruction()
 {
     Super::HandleDestruction();
     // Hide
+    bIsPlayerAlive = false;
+
+    SetActorHiddenInGame(true);
+    SetActorTickEnabled(false);
+}
+
+bool APawnTank::IsPlayerAlive() const
+{
+    return bIsPlayerAlive;
 }
 
 void APawnTank::Tick(float DeltaTime)

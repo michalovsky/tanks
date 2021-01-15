@@ -19,6 +19,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	void HandleDestruction() override;
+	bool IsPlayerAlive() const;
 	
 protected:
 	virtual void BeginPlay() override;
@@ -45,4 +46,6 @@ private:
 	float RotateSpeed = 100.f;
 
 	APlayerController* PlayerController;
+
+	bool bIsPlayerAlive = true;
 };
